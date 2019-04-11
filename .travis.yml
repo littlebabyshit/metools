@@ -21,11 +21,11 @@ script:
 after_script:
   - cd ./dist
   - git init
-  - git config user.name "${U_NAME}"
-  - git config user.email "${U_EMAIL}"
+  - git config user.name "${U_name}"
+  - git config user.email "${U_email}"
   - git add .
   - git commit -m "Update tools"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+  - git push --force --quiet "https://${git_token}@${git_add}" master:master
 # E: Build LifeCycle
 
 branches:
