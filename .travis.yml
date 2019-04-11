@@ -2,6 +2,14 @@ language: node_js
 node_js: 
     - '6.10.3'
 
+# test sonar
+
+addons:
+  sonarcloud:
+    organization: "$SONAR_ORG"
+    token:
+      secure: "$SONAR_TOKEN"
+
 # Travis-CI Caching
 cache:
   directories:
@@ -17,6 +25,7 @@ before_script:
 
 script:
   - npm run build
+  - sonar-scanner
 
 after_script:
   - cd ./dist
